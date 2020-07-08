@@ -15,9 +15,4 @@ jobs:
       run: wget https://getcomposer.org/installer -o composer-install.php
       
     - name: Installing...
-      run: |
-        clear
-        echo "-------------------------------"
-        echo; echo 
-        cat ./composer-install.php
-        echo; echo "--------------------------------"; echo; echo
+      run: cat ./composer-install.php
