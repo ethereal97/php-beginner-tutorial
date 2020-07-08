@@ -1,0 +1,34 @@
+name: CI
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Downloading...
+      run: wget https://getcomposer.org/installer -o composer-install.php
+      
+    - name: Installing...
+      run: php composer-install.php
+
+    - name: Validating...
+      run: |
+        ls -A
+        if [[ -e "./composer.phar" ]]; then
+          cat "./composer.phar"
+        fi
+        
+    - name: Commit to Git
+      run: |
+        git branch testing
+        git checkout testing
+        git add .
+        git commit -m "Updated @$(date)"
+        git push -u origin testing
+        
