@@ -1,6 +1,6 @@
 # PHP Practitioner
 
-1) Installing PHP
+1) [Installing PHP](https://github.com/ethereal97/php-beginner-tutorial/tree/master/Installing%20PHP.md)
 2) Installing Code Editor
 3) Variables
 4) PHP and HTML
